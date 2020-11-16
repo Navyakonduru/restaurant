@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 #header .change-icon-lg:hover, #header .change-icon:hover, #header .login-icon:hover{
-  background-color: #fdc46d;
+  background-color: #ffc56e;
 }
 @media (max-width: 992px) {
   #header {
@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
-  top: 16px;
+  top: 15px;
   z-index: 9998;
   border: 0;
   background: none;
@@ -272,6 +272,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s;
   line-height: 1;
   text-align: right;
+  outline: none;
 }
 
 .mobile-nav-toggle i {
