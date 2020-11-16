@@ -2,7 +2,7 @@
 function validate_fname(){
     document.getElementById("f_name").innerHTML="";
     var fname = document.getElementById("fname").value;
-    var re = /^[a-zA-Z ]{1,15}$/;
+    var re = /[^ ][a-zA-Z ]{1,35}$/;
     if(!fname){
         document.getElementById("f_name").innerHTML="First name is required";
         return 1;
@@ -18,7 +18,7 @@ function validate_fname(){
 function validate_lname(){
     document.getElementById("l_name").innerHTML="";
     var lname = document.getElementById("lname").value;
-    re = /^[a-zA-Z ]{1,15}$/;
+    re = /^[a-zA-Z ]{1,35}$/;
     if(!lname){
         document.getElementById("l_name").innerHTML="Last name is required";
         return 1;
@@ -66,7 +66,7 @@ function validate_phone(){
 function validate_ename(){
     document.getElementById("e_name").innerHTML="";
     var e_name= document.getElementById("event-name").value;
-    var re = /^[a-zA-Z ]{1,15}$/;
+    var re = /^[a-zA-Z ]{1,50}$/;
     if(e_name.length == 0){
         document.getElementById("e_name").innerHTML="Event name is required";
         return 1;
@@ -183,16 +183,17 @@ function validate(){
         Email.send({
             Host: "smtp.gmail.com",
             Username : "delicious1res@gmail.com",
-            Password : "delicious54",
+            Password : "delicious54*",
             port: 587,
             To : email,
             From : "delicious1res@gmail.com",
             Subject : "Room booked successfully",
             Body : body,
         })
-        .then(
-        message => alert(message)
-        );
+        .then(function(message){
+            window.history.back();
+        });
+        
     }
 }
 
@@ -213,7 +214,7 @@ function change(){
             timings2.splice(x,1);
         });
         if(timings.length==0){
-            document.getElementById("e_time").innerHTML="No free slots available in "+room+" room on "+date;
+            document.getElementById("e_time").innerHTML="No bookings available for "+room+" room on "+date;
             document.getElementById("time_options").innerHTML="";
             document.getElementById("time_options").disabled=true;
         }

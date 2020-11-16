@@ -1,21 +1,22 @@
 //name
-function validate_name(){
-    document.getElementById("e_name").innerHTML="";
+function validate_table_name(){
+    document.getElementById("t_name").innerHTML="";
     var name = document.getElementById("name").value;
-    re = /^[a-zA-Z ]{1,40}$/;
+    var re = /[^ ][a-zA-Z ]{1,35}$/;
+    console.log(!name);
     if(!name){
-        document.getElementById("e_name").innerHTML="Name is required";
+        document.getElementById("t_name").innerHTML="First name is required";
         return 1;
     }
     else if(!re.test(name)){
-        document.getElementById("e_name").innerHTML="Invalid name";
+        document.getElementById("t_name").innerHTML="Invalid First Name";
         return 1;
     }
     return 0;
 }
 
 //Email
-function validate_mail() {
+function validate_table_mail() {
     document.getElementById("mail").innerHTML="";
     var email = document.getElementById("email").value;
     re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,7 +32,7 @@ function validate_mail() {
 }
 
 //Phone
-function validate_phone(){
+function validate_table_phone(){
     document.getElementById("contact").innerHTML="";
     var phone = document.getElementById("phone").value;
     var re = /^\d{10}$/;
@@ -47,7 +48,7 @@ function validate_phone(){
 }
 
 //Date
-function validate_date(){
+function validate_table_date(){
     document.getElementById("e_date").innerHTML="";
     var date = document.getElementById("date").value;
     var d=new Date();
@@ -71,7 +72,7 @@ function validate_date(){
 }
 
 //num
-function validate_num(){
+function validate_table_num(){
     document.getElementById("num").innerHTML="";
     let num = document.getElementById("people").value;
     if(!num){
@@ -87,7 +88,7 @@ function validate_num(){
 }
 
 //time
-function validate_time(){
+function validate_table_time(){
     document.getElementById("e_time").innerHTML="";
     let time = document.getElementById("time").value;
     if(!time){
@@ -97,7 +98,8 @@ function validate_time(){
     return 0;
 }
 
-function validate(){
+function validate_table(){
+    console.log("hi");
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
@@ -106,13 +108,13 @@ function validate(){
     let time = document.getElementById("time").value;
 
     var x=0;
-    x=x+validate_name();
-    x=x+validate_mail();
-    x=x+validate_phone();
-    x=x+validate_date();
-    x=x+validate_time();
-    x=x+validate_num();
-    
+    x=x+validate_table_name();
+    x=x+validate_table_mail();
+    x=x+validate_table_phone();
+    x=x+validate_table_date();
+    x=x+validate_table_time();
+    x=x+validate_table_num();
+    console.log(x);
     if(x==0){
         var obj=({
             name: name,
@@ -127,15 +129,15 @@ function validate(){
         Email.send({
             Host: "smtp.gmail.com",
             Username : "delicious1res@gmail.com",
-            Password : "delicious54",
+            Password : "delicious54*",
             port: 587,
             To : email,
             From : "delicious1res@gmail.com",
             Subject : "Table reserved successfully",
             Body : body,
         })
-        .then(
-        message => document.querySelector(".close").click()
-        );
+        .then(function(message){
+            document.querySelector(".cl").click();
+        });
     }
 }

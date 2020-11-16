@@ -76,7 +76,7 @@
 
 	            <p>For all large party reservations (12 to 24 guests), we offer seating at long tables along the banquettes for up to 24 guests or 40 guests.</p>
 
-	            <a class="btn btn-brand inquire" href="book.html" target="_blank">Inquire Now</a>
+	            <a class="btn btn-brand inquire" href="book.html">Inquire Now</a>
 	          </div>
 	        </div>
 	      </div>
@@ -90,7 +90,7 @@
 			<div class="modal-content"> 
 
 				<div class="m-header"> 
-					<button class="close" data-dismiss="modal"> 
+					<button class="close cl" data-dismiss="modal"> 
 					  <i class="icofont-close"></i> 
 					</button> 
 					<h3> RESERVATION </h3> 
@@ -104,8 +104,8 @@
 						<label for="name" class="sr-only"> 
 						Name 
 						</label> 
-						<input type="text" class="form-control" id="name" placeholder="Your Name" oninput="validate_name()"> 
-						<div class="error" id="e_name"></div>
+						<input type="text" class="form-control" id="name" placeholder="Your Name" oninput="validate_table_name()"> 
+						<div class="error" id="t_name"></div>
 					</div> 
 
 					<!-- Email input -->
@@ -113,7 +113,7 @@
 						<label for="email" class="sr-only"> 
 						Email 
 						</label> 
-						<input type="text" class="form-control" id="email" placeholder="Email Address" oninput="validate_mail()""> 
+						<input type="text" class="form-control" id="email" placeholder="Email Address" oninput="validate_table_mail()""> 
 						<div class="error" id="mail"></div>
 					</div> 
 
@@ -122,7 +122,7 @@
 						<label for="phone" class="sr-only"> 
 						Phone 
 						</label> 
-						<input type="tel" class="form-control" id="phone" placeholder="Phone Number" oninput="validate_phone()"> 
+						<input type="tel" class="form-control" id="phone" placeholder="Phone Number" oninput="validate_table_phone()"> 
 						<div class="error" id="contact"></div>
 					</div> 
 
@@ -131,7 +131,7 @@
 						<label for="date" class="sr-only"> 
 						Date
 						</label> 
-						<input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy" oninput="validate_date()"> 
+						<input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy" oninput="validate_table_date()"> 
 						<div class="error" id="e_date"></div>
 					</div> 
 
@@ -140,7 +140,7 @@
 						<label for="time" class="sr-only"> 
 						Time
 						</label> 
-						<input type="time" class="form-control" name="appt" id="time" oninput="validate_time()"/> 
+						<input type="time" class="form-control" id="time" oninput="validate_table_time()"/> 
 						<div class="error" id="e_time"></div>
 					</div>
 
@@ -149,13 +149,13 @@
 						<label for="people" class="sr-only"> 
 						Number of people
 						</label> 
-						<input type="number" class="form-control" id="people" placeholder="# of people" oninput="validate_num()"> 
+						<input type="number" class="form-control" id="people" placeholder="# of people" oninput="validate_table_num()"> 
 						<div class="error" id="num"></div>
 					</div>
 
 					<div id="result"></div>
 					<div class="form-group text-center"> 
-						<button class="submit" type="submit" onclick="validate()"> Reserve</button> 
+						<button class="submit" type="submit" onclick="validate_table()"> Reserve</button> 
 					</div> 
 				</form>
 			   </div> 
@@ -206,6 +206,8 @@
 	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
 
     <script>
 		// Your web app's Firebase configuration
