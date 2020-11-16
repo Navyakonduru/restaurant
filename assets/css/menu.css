@@ -1,0 +1,123 @@
+#header.header-transparent{
+	background:rgba(26, 24, 22, 0.85);
+}
+#topbar.topbar-transparent {
+  background: rgba(26, 24, 22, 0.8);
+}
+#footer{
+	margin-top: 70px;
+}
+
+/*-- ======= Menus section ======= */
+
+.menu{
+	padding-top: 180px;
+}
+
+@media (max-width: 992px){
+  .menu{
+    padding-top: 130px;
+  }
+}
+
+.menu #menu-flters {
+  padding: 0;
+  margin: 0 auto 0 auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.menu .menu-container{
+  margin-top: 50px;
+}
+
+.menu #menu-flters li{
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #444444;
+  margin: 0 3px 10px 3px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  border: 2px solid #ffb03b;
+  border-radius: 50px;
+}
+
+.menu #menu-flters li:hover, .menu #menu-flters li.filter-active {
+  color: #fff;
+  background: #ffb03b;
+}
+
+.menu #menu-flters li:last-child {
+  margin-right: 0;
+}
+
+.menu .menu-item {
+  margin-top: 50px;
+}
+.menu .menu-img {
+  width: 100px;
+  float: left;
+  border: 2px solid rgba(0,0,0,0.6);
+  border-radius: 10px;
+}
+
+.menu .menu-title {
+  margin-left: 115px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu .menu-title::after {
+  content: "......................................................................"
+ "...................................................................."
+ "....................................................................";
+  position: absolute;
+  left: 20px;
+  right: 0;
+  top: -4px;
+  z-index: 1;
+  color: #dad8d4;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.menu .menu-title a {
+  padding-right: 10px;
+  background: #fff;
+  position: relative;
+  z-index: 3;
+  font-weight: 700;
+  color: #ff9b08;
+  text-decoration: none;
+}
+
+.menu .menu-title span {
+  background: #fff;
+  position: relative;
+  z-index: 3;
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+.menu .menu-content {
+  margin-left: 115px;
+  font-style: italic;
+  font-size: 14px;
+  font-family: "Comic Neue", sans-serif;
+  color: #948c81;
+}
+
+@media(max-width:767px){
+  .menu .menu-img {
+      width: 80px;
+  }
+  .menu .menu-content,.menu .menu-title {
+    margin-left: 95px;
+  }
+}

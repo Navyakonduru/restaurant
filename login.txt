@@ -1,0 +1,111 @@
+
+<!-- ======= Login Modal ======= -->
+	<div class="modal fade" id="loginModal" role="dialog" data-backdrop="static"> 
+		<div class="modal-dialog modal-dialog-centered"> 
+			<div class="modal-content"> 
+				<div class="m-header"> 
+					<button class="close" data-dismiss="modal"> 
+					  <i class="icofont-close"></i> 
+					</button> 
+					<h3> LOGIN </h3> 
+					<div class="error" id="fail"></div>
+				</div> 
+				<!-- Modal body -->
+				<div class="modal-body"> 
+				  <div class="container">
+
+				<!--	
+				<button type="button" class="btn google" onclick="google()"><img src="https://img.icons8.com/color/96/000000/google-logo.png"/> Continue with Google</button>
+				-->
+					<form class="login-form" method="POST" onsubmit="return false;">
+					<div class="form-group"> 
+						<label for="mail" class="sr-only">Mail Id</label> 
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="icofont-email"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="l_mail" placeholder="Mail Id" oninput="validate_lmail()">
+						</div> 
+						<div class="error" id="el_mail"></div>
+					</div> 
+
+					<div class="form-group">
+						<label for="password" class="sr-only">Password</label> 
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="icofont-ssl-security"></i>
+								</span>
+							</div>
+							<input type="Password" class="form-control" id="l_password" placeholder="Password" oninput="validate_lpassword()">
+						</div> 
+						<div class="error" id="el_password"></div>
+					</div> 
+
+					<div class="text-right fpass">
+						<a href="#forgotPass" class="forgotPass" data-dismiss="modal" data-toggle="modal" data-target="#forgotPass">
+							Forgot password?
+						</a>
+					</div>
+
+					<div class="form-group text-center">
+						<button class="loginBtn" onclick="validate_login()">
+							Login
+						</button>
+					</div>
+				</form>
+
+
+					<div class="modal-footer">
+						<div class="sign-up">
+							<span>Don't have an account?</span>
+							<a href="#signModal" class="signUpBtn" data-dismiss="modal" data-toggle="modal" data-target="#signModal"><strong>Sign Up</strong></a>
+						</div>
+					</div>
+
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- ======= Forgot Password Modal ======= -->
+	<div class="modal fade" id="forgotPass" role="dialog" data-backdrop="static"> 
+		<div class="modal-dialog modal-dialog-centered"> 
+			<div class="modal-content"> 
+				<div class="m-header"> 
+					<button class="close" data-dismiss="modal"> 
+					  <i class="icofont-close"></i> 
+					</button> 
+					<h3> Forgot Password? </h3>
+					<div class="error" id="fail"></div>
+				</div> 
+
+				<!-- Modal body -->
+				<div class="modal-body"> 
+				  <div class="container">
+				  	<p>Enter your email address to reset your password</p>
+
+					<form class="password-form" method="POST" onsubmit="return false;">
+						<div class="form-group"> 
+							<label for="mail" class="sr-only">Mail Id</label> 
+							<input type="text" class="form-control" id="p_mail" placeholder="example@gmail.com" oninput="validate_pmail()">
+							
+							<div class="error" id="ep_mail"></div>
+						</div> 
+
+						<div class="form-group text-center">
+							<button class="PassBtn" onclick="validate_forgotPass()">
+								Reset Password
+							</button>
+						</div>
+					</form>
+
+				  </div>	  
+				</div>
+			</div>
+		</div>
+	</div>

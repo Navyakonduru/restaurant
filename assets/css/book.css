@@ -1,0 +1,62 @@
+.book{
+	background-color: #f9f9fb;
+	font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a4a4a4;
+}
+
+.book .container{
+	background-color: #fff;
+	padding-top: 20px;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*-- ======= Event Request ======= */
+
+.book .title1 h2{
+	text-align: left;
+	color: #ffb03b;
+	padding: 20px 0;
+	font-family: "Gill Sans";
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.book .section-body{
+	border-top: 1px solid gray;
+	padding: 12px 15px 21px;
+}
+
+.book .section-body form{
+    color: black;
+}
+
+.book .section-body p{
+	padding: 10px 10px 0;
+}
+
+.book form .error{
+	font-family: "Poppins", sans-serif;
+	color: red;
+	font-size: 13px;
+	align-self: center;
+}
+
+
+/*-- ======= submit ======= */
+
+.book .commit .btn{
+	margin-top: 40px;
+	background-color: black;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.book .commit .col-sm-3{
+	padding-left: 0;
+}
+
+.book .commit .btn:hover{
+	background-color: darkslategray;
+}

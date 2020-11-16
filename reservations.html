@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <title>Delicious</title>
+
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/reservations.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+</head>
+<body>
+
+	<!-- ======= Top Bar ======= -->
+	<section id="topbar" class="d-none d-lg-flex align-items-center fixed-top topbar-transparent">
+	    <div class="container text-right">
+	      <i class="icofont-phone"></i> +91 6304634270
+	      <i class="icofont-clock-time icofont-rotate-180"></i> Mon-Sat: 11:00 AM - 23:00 PM
+	    </div>
+  	</section>
+
+  <!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+	    <div class="container d-flex align-items-center">
+
+	      <div class="logo mr-auto">
+	      	<h1 class="text-light"><a href="index1.html"><span>Delicious</span></a></h1>
+		  </div>
+		  <div id="login-sm" class="d-xl-none d-lg-none">
+				<!--<span class="tooltiptext">Login or Signup here</span>-->
+		  </div>
+	      <nav class="nav-menu d-none d-lg-block">
+	        <ul>
+	          <li><a href="index1.html">Home</a></li>
+	          <li><a href="about.html">About</a></li>
+	          <li><a href="menu.html">Menu</a></li>
+	          <li><a href="events.html">Events</a></li>
+	          <li><a href="gallery.html">Gallery</a></li>
+			  <li><a href="contact.html">Contact</a></li>
+	          <li><a href="order.html">Order Online</a></li>
+			  <li  class="active"><a href="reservations.html">Reservations</a></li>
+			  
+	          <li id="login-lg" class="d-none d-lg-block d-xl-block">
+	          </li>
+	        </ul>
+      	</nav>
+	  </div>
+	</header>
+
+	<div id="bg-img">
+	</div>
+
+	<div id="login-load"></div>
+	<div id="sign-load"></div>
+	<!-- ======= Reservation ======= -->
+	<section id="reservation" class="reservation">
+		<div class="container" data-aos="fade-up">
+
+	        <div class="section-title">
+	          <h2>Reserv<span>ations</span></h2>
+	        </div>
+
+	        <div class="col-12 col-lg-10 offset-lg-1">
+	          <div class="box" data-aos="fade-up" data-aos-delay="100">
+	            <p>We’re happy to have you join us at delicious. Our seating requests are powered through Open Table. While we cannot guarantee seats in our main dining room, we do our best to accommodate your requests. While you wait, please take a seat and relax in our lounge area to enjoy one of our seasonal or signature menu. Please keep in mind we can only seat complete parties and can only hold tables for up to 15 minutes past your reservation time.</p>
+
+	            <a class="btn btn-brand reserve" href="#reserve" data-toggle="modal" data-target="#reserve">Reserve Now</a>
+
+	            <p>For all large party reservations (12 to 24 guests), we offer seating at long tables along the banquettes for up to 24 guests or 40 guests.</p>
+
+	            <a class="btn btn-brand inquire" href="book.html" target="_blank">Inquire Now</a>
+	          </div>
+	        </div>
+	      </div>
+	</section>
+
+	<!-- ======= Book a table modal ======= -->
+	
+	<div class="modal fade" id="reserve" role="dialog" data-backdrop="static"> 
+
+		<div class="modal-dialog modal-dialog-centered"> 
+			<div class="modal-content"> 
+
+				<div class="m-header"> 
+					<button class="close" data-dismiss="modal"> 
+					  <i class="icofont-close"></i> 
+					</button> 
+					<h3> RESERVATION </h3> 
+				</div> 
+
+				<!-- Modal body -->
+				<div class="modal-body"> 
+					<div class="container">
+					<form class="reserve-form">
+					<div class="form-group"> 
+						<label for="name" class="sr-only"> 
+						Name 
+						</label> 
+						<input type="text" class="form-control" id="name" placeholder="Your Name" oninput="validate_name()"> 
+						<div class="error" id="e_name"></div>
+					</div> 
+
+					<!-- Email input -->
+					<div class="form-group">
+						<label for="email" class="sr-only"> 
+						Email 
+						</label> 
+						<input type="text" class="form-control" id="email" placeholder="Email Address" oninput="validate_mail()""> 
+						<div class="error" id="mail"></div>
+					</div> 
+
+					<!-- Phone -->
+					<div class="form-group"> 
+						<label for="phone" class="sr-only"> 
+						Phone 
+						</label> 
+						<input type="tel" class="form-control" id="phone" placeholder="Phone Number" oninput="validate_phone()"> 
+						<div class="error" id="contact"></div>
+					</div> 
+
+					<!-- Date -->
+					<div class="form-group"> 
+						<label for="date" class="sr-only"> 
+						Date
+						</label> 
+						<input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy" oninput="validate_date()"> 
+						<div class="error" id="e_date"></div>
+					</div> 
+
+					<!-- Time -->
+					<div class="form-group"> 
+						<label for="time" class="sr-only"> 
+						Time
+						</label> 
+						<input type="time" class="form-control" name="appt" id="time" oninput="validate_time()"/> 
+						<div class="error" id="e_time"></div>
+					</div>
+
+					<!-- number of people -->
+					<div class="form-group"> 
+						<label for="people" class="sr-only"> 
+						Number of people
+						</label> 
+						<input type="number" class="form-control" id="people" placeholder="# of people" oninput="validate_num()"> 
+						<div class="error" id="num"></div>
+					</div>
+
+					<div id="result"></div>
+					<div class="form-group text-center"> 
+						<button class="submit" type="submit" onclick="validate()"> Reserve</button> 
+					</div> 
+				</form>
+			   </div> 
+			  </div>
+			</div> 
+		</div> 
+	</div> 
+
+
+	<!-- ======= Footer ======= -->
+	<footer id="footer" class="footer">
+		<div class="footer-top">
+        <div class="container">
+        	<h2>Delicious</h2>
+        	<p>Count the memories, not the calories.</p>
+                <h5>Our Address</h5>
+                <address>
+		            121, Clear Water Bay Road<br>
+		            Clear Water Bay, Kowloon<br>
+		            HONG KONG<br>
+		        </address>
+
+            <div class="social-links">
+			    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+			    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+			    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+			    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+			    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+			</div>
+		</div>
+		</div>
+			   
+		<div class="copy-container">
+			<div class="copyright">
+				&copy; Copyright <strong><span>Delicious</span></strong>. All Rights Reserved
+			</div>
+		</div>
+    </footer>
+
+
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+  	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/aos/aos.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+    <script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+		apiKey: "AIzaSyDidmpl3-ZroTqg4KlBynOPukRWtP7yKWQ",
+		authDomain: "restaurant-2b509.firebaseapp.com",
+		databaseURL: "https://restaurant-2b509.firebaseio.com",
+		projectId: "restaurant-2b509",
+		storageBucket: "restaurant-2b509.appspot.com",
+		messagingSenderId: "474239649422",
+		appId: "1:474239649422:web:853032501e442d329cebdf",
+		measurementId: "G-FXDHSTHH98"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		const db=firebase.firestore();
+	</script>
+	  
+	<script>
+		$('.submit').click(function(e){
+			e.preventDefault();
+		});
+		$("#login-load").load("login.txt");
+		$("#sign-load").load("signup.txt");
+	</script>
+
+	<script src="assets/js/main1.js"></script>
+	<script src="assets/js/reservation.js"></script>
+	<script src="assets/js/login.js"></script>
+
+</body>
+</html>

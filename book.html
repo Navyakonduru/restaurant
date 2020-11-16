@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <title>Delicious</title>
+
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/book.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ======= Book ======= -->
+  <section id="book" class="book">
+    <div class="container">
+
+        <div class="section-title">
+          <h2>Event <span>Request</span></h2>
+        </div>
+
+        <div class="section-body">
+
+        <p>Delicious specializes in Private Parties, Corporate and Press Events, Weddings and other celebrations for groups from 5 to 500. We feature four private event spaces perfect for any occasion, as well as the option to book the entire restaurant. Menus range from passed hors d'oeuvres and drinks to our diverse shared menus for seated dinners. All of our preset menus are served family style and includes our signature mezza served in two flowing courses, your choice of main and side dishes, and desserts. We have a unique selection of pre-dinner hors d’oeuvres and a wide selection of wines for a truly unique experience. Additionally, we can provide design services & décor, a flat-screen tv or projector for presentations, and arrange entertainment if suitable for your event.</p>
+        
+        <p>For more information on our diverse private dining and event options, please contact our Events Team at 212.481.1840</p>
+        
+    <form class="event-form" onchange="change()" method="POST">
+      <div class="contact-info">
+        <div class="title1">
+          <h2>Your Contact Information</h2>
+        </div>
+
+        <div class="offset-sm-1">
+        <div class="form-group row">
+          <label for="first-name" class="col-sm-4 col-form-label">
+                First Name
+          </label>
+          <div class="col-sm-4">
+              <input type="text" name="firstname" class="form-control" id="fname" oninput="validate_fname()"/>
+          </div>
+          <div id="f_name" class="error col-sm-4"> </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="last-name" class="col-sm-4 col-form-label">
+                Last Name
+          </label>
+          <div class="col-sm-4">
+              <input type="text" name="lastname" class="form-control" id="lname" oninput="validate_lname()"/>
+          </div>
+          <div id="l_name" class="error col-sm-4"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-sm-4 col-form-label">
+                Email address
+          </label>
+          <div class="col-sm-4">
+              <input type="text" name="email" class="form-control" id="email" oninput="validate_mail()"/>
+          </div>
+          <div id="mail" class="error col-sm-4"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="phone" class="col-sm-4 col-form-label">
+                Phone Number
+          </label>
+          <div class="col-sm-4">
+              <input type="tel" name="phone" class="form-control" id="phone" oninput="validate_phone()"/>
+          </div>
+          <div id="contact" class="error col-sm-4"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="preference" class="col-sm-4 col-form-label">
+                Contact Preference
+          </label>
+          <div class="col-sm-4">
+            <select class="form-control" name="contact-preference" id="contact-preference">
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+          <div id="pref" class="col-sm-4"></div>
+        </div>
+      </div>
+    </div>  <!-- end of contact-info section-->
+
+      <div class="Event-info">
+        <div class="title1">
+          <h2>Your Event Details</h2>
+        </div>
+
+        <div class="offset-sm-1">
+        <div class="form-group row">
+
+          <div class="col-sm-12">
+            <label for="event-name" class="col-form-label">
+                  Name of the Event: (ex: birthday party, coorporate dinner, catering, etc)
+            </label>
+          </div>
+          <div class="col-sm-9">
+              <textarea name="eventname" class="form-control" id="event-name" value="" rows="2" oninput="validate_ename()" required></textarea>
+          </div>
+          <div id="e_name" class="error col-sm-3"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="event-date" class="col-sm-4 col-form-label">
+                Event Date
+          </label>
+          <div class="col-sm-3">
+              <input type="date" name="event-date" class="form-control" id="event-date" oninput="validate_date()"/>
+          </div>
+          <div id="date" class="error col-sm-4"></div>
+        </div>  
+
+        <div class="form-group row">
+          <label for="room" class="col-sm-4 col-form-label">
+                Room
+          </label>
+          <div class="col-sm-3">
+            <div class="form-group" id="room">
+              <input type="radio" name="room" value="bar" oninput="validate_room()"/>  Bar room <br>
+              <input type="radio" name="room" value="gratify" oninput="validate_room()"/>  Gratify room <br>
+              <input type="radio" name="room" value="patrio" oninput="validate_room()"/> Patio room<br>
+              <input type="radio" name="room" value="semi-private" oninput="validate_room()"/> Semi-Private room
+              <br>
+              <input type="radio" name="room" value="full" id="room"/> Full Restuarant<br>
+            </div>
+          </div>
+          <div id="e_room" class="error col-sm-4"></div>
+        </div>   
+
+        <div class="form-group row">
+          <label for="time" class="col-sm-4 col-form-label">
+                Time
+          </label>
+          <div class="col-sm-3">
+            <select id="time_options" class="form-control" name="time">
+              <option></option>
+            </select>
+          </div>
+          <div id="e_time" class="error col-sm-4"></div>
+        </div>  
+
+        <div class="form-group row">
+          <label for="number-people" class="col-sm-4 col-form-label">
+                Number of People
+          </label>
+          <div class="col-sm-2">
+              <input type="text" name="number-people" class="form-control" id="number-people" oninput="validate_num()"/>
+          </div>
+          <div id="num" class="error col-sm-4"></div>
+        </div>      
+
+        <div class="form-group row">
+          <label for="add-info" class="col-sm-12 col-form-label">
+                Is there any additional information you would like to add?
+          </label>
+
+          <div class="col-sm-9">
+              <textarea name="add-info" class="form-control" id="add-info" rows="2"></textarea>
+          </div>
+        </div> 
+
+        <div class="form-group row">
+          <label for="hear" class="col-sm-12 col-form-label">
+                How did you hear about us?
+          </label>
+          <div class="col-sm-3">
+            <select name="hear" id="hear">
+              <option value="insta">Instagram</option>
+              <option value="fb">Facebook</option>
+              <option value="search">Search Engine</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+          <div id="hear_r" class="error col-sm-4"></div>
+        </div> 
+<!--
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6LdDSNwZAAAAAIr8AA-4CJrTKYb9wpBlkiYi1l56" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+            <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+            <div class="help-block with-errors"></div>
+        </div>
+        -->
+      
+      </div> 
+      </div>  <!-- end of event-info section-->
+
+      <div class="commit form-group">
+        <div class="offset-sm-1 col-6 col-sm-3">
+          <input type="submit" name="submit" value="submit" id="submit" class="btn form-control" onclick="validate()"/>
+        </div>
+      </div>
+
+      </form>
+     </div>
+    </div>
+  </section>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDidmpl3-ZroTqg4KlBynOPukRWtP7yKWQ",
+      authDomain: "restaurant-2b509.firebaseapp.com",
+      databaseURL: "https://restaurant-2b509.firebaseio.com",
+      projectId: "restaurant-2b509",
+      storageBucket: "restaurant-2b509.appspot.com",
+      messagingSenderId: "474239649422",
+      appId: "1:474239649422:web:853032501e442d329cebdf",
+      measurementId: "G-FXDHSTHH98"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db=firebase.firestore();
+  </script>
+
+  <script>
+    $('#submit').click(function(e){
+      e.preventDefault();
+    });
+    document.getElementById("time_options").disabled=true;
+  </script>
+
+  <script src="assets/js/book.js"></script>
+</body>
+</html>

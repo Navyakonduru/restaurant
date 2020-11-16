@@ -1,0 +1,116 @@
+body{ 
+      text-align: center; 
+} 
+
+#footer .footer-top{
+	margin-top: 0px;
+}
+
+#bg-img{
+	background: url(../img/reserve-bg.jpg) center center no-repeat;
+	position: relative;
+	background-size: cover;
+  width: 100%;
+  height:30vh;
+}
+@media(min-width:1200px){
+  #bg-img{
+    height:50vh;
+  }
+}
+
+#bg-img::before{
+  content: '';
+  background-color: rgba(12, 11, 10, 0.4);
+  position: absolute;
+  top: -20px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+/*-- ======= Reservations ======= */
+
+.reservation{
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.reservation .box{
+  border-top: 1px solid gray;
+  padding-top: 30px;
+}
+
+.reservation p{
+  margin-bottom: 1rem;
+  font-weight: 250;
+  font-family: "Gill Sans";
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  color:#222;
+}
+
+.reservation .reserve,.reservation .inquire{
+	margin-top: 20px;
+	text-transform: uppercase;
+	background-color: black;
+	color: #fff;
+	padding: 5px 50px; 
+	letter-spacing: 1px;
+	margin-bottom: 40px;
+  border: 0;
+}
+
+.reservation .inquire:hover,.reservation .reserve:hover{
+  border-radius: 20px 0;
+  background-color: #fff;
+  border:2px solid black;
+  color: black;
+  font-weight: 600;
+}
+
+/*-- ======= reserve modal ======= */
+
+.modal .m-header h3{
+  font-family: "Playfair Display", serif;
+  /*color: #cda45e;*/
+  color: #ffb03b;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.modal .m-header .close:hover{
+  color: black;
+}
+
+.modal .modal-content { 
+  padding: 20px 10px; 
+  text-align: center; 
+}
+
+.modal .modal-content .form-group{
+  padding-top: 10px;
+}
+
+.modal .modal-content .submit{
+  background-color: black;
+  color: #fff;
+  padding: 5px 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.modal .modal-content .submit:hover{
+  background-color: black;
+  color: #fff;
+  border-radius: 40px;
+}
+    
+.modal .modal-content form .error{
+  font-family: "Poppins", sans-serif;
+	color: red;
+  font-size: 11px;
+  text-align: left;
+  padding-top: 5px;
+}

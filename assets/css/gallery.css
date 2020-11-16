@@ -1,0 +1,36 @@
+#header.header-transparent{
+	background:rgba(26, 24, 22, 0.85);
+}
+#topbar.topbar-transparent {
+  background: rgba(26, 24, 22, 0.8);
+}
+#footer{
+	margin-top: 70px;
+}
+
+/*-- ======= Gallery section ======= */
+
+.gallery{
+	margin-top: 120px;
+}
+
+@media (max-width: 992px){
+  .gallery{
+    margin-top: 70px;
+  }
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+  background-color: (26, 24, 22, 0.8);;
+}
